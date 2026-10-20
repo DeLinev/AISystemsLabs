@@ -1,0 +1,15 @@
+task,model,settings,n_params,best_iter,val_loss,accuracy,inference_sec
+language-modeling,minigpt_v1_L4,"vocab_size=16000, context_len=64, embed_dim=128, n_heads=4, n_layers=4, dropout=0.1, batch_size=64, learning_rate=0.003, max_iters=8000",4912000,7750.0,4.753,,
+language-modeling,minigpt_v2_L8,"vocab_size=16000, context_len=64, embed_dim=128, n_heads=4, n_layers=8, dropout=0.1, batch_size=64, learning_rate=0.003, max_iters=20000",5703552,19999.0,4.367,,
+language-modeling,minigpt_v3_wide,"vocab_size=16000, context_len=128, embed_dim=256, n_heads=8, n_layers=6, dropout=0.1, batch_size=64, learning_rate=0.001, max_iters=8000",12975232,7750.0,4.293,,
+sentiment-analysis,cardiffnlp/twitter-xlm-roberta-base-sentiment,default,278045955,,,0.95,0.3226130800003375
+sentiment-analysis,tabularisai/multilingual-sentiment-analysis,default,135328517,,,0.95,0.12020679100032794
+sentiment-analysis,cardiffnlp/twitter-xlm-roberta-base-sentiment,"max_length=5, threshold=0.5",278045955,,,0.65,
+sentiment-analysis,cardiffnlp/twitter-xlm-roberta-base-sentiment,"max_length=5, threshold=0.8",278045955,,,0.55,
+sentiment-analysis,cardiffnlp/twitter-xlm-roberta-base-sentiment,"max_length=5, threshold=0.95",278045955,,,0.5,
+sentiment-analysis,cardiffnlp/twitter-xlm-roberta-base-sentiment,"max_length=15, threshold=0.5",278045955,,,0.95,
+sentiment-analysis,cardiffnlp/twitter-xlm-roberta-base-sentiment,"max_length=15, threshold=0.8",278045955,,,0.9,
+sentiment-analysis,cardiffnlp/twitter-xlm-roberta-base-sentiment,"max_length=15, threshold=0.95",278045955,,,0.5,
+sentiment-analysis,cardiffnlp/twitter-xlm-roberta-base-sentiment,"max_length=512, threshold=0.5",278045955,,,0.95,
+sentiment-analysis,cardiffnlp/twitter-xlm-roberta-base-sentiment,"max_length=512, threshold=0.8",278045955,,,0.9,
+sentiment-analysis,cardiffnlp/twitter-xlm-roberta-base-sentiment,"max_length=512, threshold=0.95",278045955,,,0.5,
