@@ -1,0 +1,17 @@
+label,model,concurrency,requests,errors,ttft_p50_s,ttft_p95_s,tokens_per_s_per_user_p50,throughput_tokens_per_s,reasoning
+before,gemma3:4b,1,16,0,2.136,2.153,68.3,35.8,False
+before,gemma3:4b,2,16,0,2.647,4.02,76.4,63.2,False
+before,gemma3:4b,4,16,0,6.004,8.265,73.8,69.7,False
+before,gemma3:4b,8,16,0,15.008,15.864,71.8,67.0,False
+after_q8,gemma3:4b-it-q8_0,1,16,0,2.133,2.167,48.4,29.1,False
+after_q8,gemma3:4b-it-q8_0,2,16,0,3.776,4.804,49.0,44.6,False
+after_q8,gemma3:4b-it-q8_0,4,16,0,9.301,12.411,49.0,46.4,False
+after_q8,gemma3:4b-it-q8_0,8,16,0,20.977,22.286,48.8,46.3,False
+after_qwen,qwen3-vl:4b-instruct,1,16,0,2.104,2.132,71.6,36.8,False
+after_qwen,qwen3-vl:4b-instruct,2,16,0,2.733,4.729,74.1,62.0,False
+after_qwen,qwen3-vl:4b-instruct,4,16,0,6.327,8.84,73.6,68.6,False
+after_qwen,qwen3-vl:4b-instruct,8,16,0,14.846,17.781,73.2,68.4,False
+after_4b-qat,gemma3:4b-it-qat,1,16,0,2.139,2.158,59.2,32.3,False
+after_4b-qat,gemma3:4b-it-qat,2,16,0,3.368,4.551,60.6,51.1,False
+after_4b-qat,gemma3:4b-it-qat,4,16,0,7.494,10.045,60.5,56.8,False
+after_4b-qat,gemma3:4b-it-qat,8,16,0,17.107,17.743,60.3,56.5,False

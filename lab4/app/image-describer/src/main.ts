@@ -315,10 +315,7 @@ describeButton.addEventListener('click', async () => {
   resultStatus.textContent = 'Модель аналізує фотографію. Перший запуск може тривати довше.'
   updateControls()
 
-  try {
-    const payload = await requestJSON<{
-      choices?: { message?: { content?: unknown }; finish_reason?: string }[]
-    }>('/chat/completions', {
+  const requestParams = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -333,7 +330,14 @@ describeButton.addEventListener('click', async () => {
         ...parameters,
         stream: false,
       }),
-    }, 120_000)
+    }
+
+  console.log(requestParams)
+
+  try {
+    const payload = await requestJSON<{
+      choices?: { message?: { content?: unknown }; finish_reason?: string }[]
+    }>('/chat/completions', requestParams, 120_000)
 
     const choice = payload?.choices?.[0]
     const description = choice?.message?.content
