@@ -33,6 +33,39 @@
           <div class="h-4 w-px bg-forest/30" aria-hidden="true"></div>
           <p class="text-forest/80">Модель має підтримувати зображення.</p>
         </div>
+        <div class="mt-5 border-t border-forest/15 pt-5">
+          <label for="description-mode" class="mb-2 block text-sm font-medium text-forest">Режим опису</label>
+          <select id="description-mode" aria-describedby="mode-help" class="w-full rounded-lg border border-forest/30 bg-paper px-3 py-2.5 text-sm text-ink outline-none focus:border-forest focus:ring-2 focus:ring-sun/40 disabled:bg-cream-light disabled:text-muted">
+            <option value="photo">Опис фотографії</option>
+            <option value="social">Підпис для допису в соцмережі</option>
+            <option value="alt">Альтернативний текст для доступності вебсторінки</option>
+          </select>
+          <p id="mode-help" class="mt-2 text-xs leading-relaxed text-muted">Короткий опис об’єктів, дій та оточення у 2–3 реченнях.</p>
+        </div>
+        <fieldset class="mt-5">
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div>
+              <label for="max-tokens" class="mb-2 block text-sm font-medium text-forest">Максимум токенів</label>
+              <input id="max-tokens" type="number" min="1" max="2048" step="1" value="300" required aria-describedby="max-tokens-help" class="w-full rounded-lg border border-forest/30 bg-paper px-3 py-2.5 text-sm text-ink outline-none focus:border-forest focus:ring-2 focus:ring-sun/40 disabled:bg-cream-light disabled:text-muted" />
+              <p id="max-tokens-help" class="mt-2 text-xs leading-relaxed text-muted">Ліміт відповіді: від 1 до 2048.</p>
+            </div>
+            <div>
+              <label for="temperature" class="mb-2 block text-sm font-medium text-forest">Температура</label>
+              <input id="temperature" type="number" min="0" max="2" step="0.01" value="0.2" required aria-describedby="temperature-help" class="w-full rounded-lg border border-forest/30 bg-paper px-3 py-2.5 text-sm text-ink outline-none focus:border-forest focus:ring-2 focus:ring-sun/40 disabled:bg-cream-light disabled:text-muted" />
+              <p id="temperature-help" class="mt-2 text-xs leading-relaxed text-muted">0–2. Нижче значення - менше випадковості.</p>
+            </div>
+            <div>
+              <label for="top-p" class="mb-2 block text-sm font-medium text-forest">Top-p</label>
+              <input id="top-p" type="number" min="0.01" max="1" step="0.01" value="0.95" required aria-describedby="top-p-help" class="w-full rounded-lg border border-forest/30 bg-paper px-3 py-2.5 text-sm text-ink outline-none focus:border-forest focus:ring-2 focus:ring-sun/40 disabled:bg-cream-light disabled:text-muted" />
+              <p id="top-p-help" class="mt-2 text-xs leading-relaxed text-muted">0.01–1. Обмежує набір імовірних токенів.</p>
+            </div>
+            <div>
+              <label for="seed" class="mb-2 block text-sm font-medium text-forest">Seed</label>
+              <input id="seed" type="number" min="0" max="2147483647" step="1" value="1" placeholder="Необов’язково" aria-describedby="seed-help" class="w-full rounded-lg border border-forest/30 bg-paper px-3 py-2.5 text-sm text-ink outline-none focus:border-forest focus:ring-2 focus:ring-sun/40 disabled:bg-cream-light disabled:text-muted" />
+              <p id="seed-help" class="mt-2 text-xs leading-relaxed text-muted">Ціле число для повторюваних спроб. Можна залишити порожнім.</p>
+            </div>
+          </div>
+        </fieldset>
       </section>
 
       <div id="error" role="alert" hidden class="mb-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm leading-relaxed text-red-800"></div>
@@ -43,7 +76,7 @@
           <label for="photo" class="mt-4 mb-2 block text-sm font-medium text-forest">Прикріпити фото
             <input id="photo" type="file" accept="image/jpeg,image/png,image/webp" aria-describedby="photo-help" class="pt-2 block w-full min-w-0 text-sm text-muted file:mr-3 file:cursor-pointer file:rounded-lg file:border-0 file:bg-sun/20 file:px-4 file:py-2.5 file:font-medium file:text-forest hover:file:bg-sun/30 disabled:opacity-50" />
           </label>
-          <p id="photo-help" class="mt-2 text-xs text-muted">JPG, PNG або WebP, до 10 МБ.</p>
+          <p id="photo-help" class="mt-2 text-xs text-muted">JPG, PNG або WebP</p>
           <div class="mt-5 overflow-hidden rounded-xl border border-cream-dark bg-cream-light">
             <div id="empty-preview" class="flex aspect-4/3 items-center justify-center px-6 text-center text-sm text-muted">Тут з’явиться прикріплена фотографія</div>
             <div id="preview-container" hidden>
